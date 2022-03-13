@@ -5,8 +5,8 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
 // time blocks color coded to indicate whether past, present or future
 function colorBlock() {
     // get hours from current time
-    var setTime = moment().hour();
- $(".time-block").each(function() {
+    var setTime = moment().hours();
+ $(".time-block").each(function () {
     var currentTime = parseInt($(this).attr("id"));
 
     if (currentTime > setTime) {
@@ -36,20 +36,7 @@ saveBtn.on("click", function() {
     var hourBlock = $(this).siblings(".hour").text();
 
     localStorage.setItem(textArea, hourBlock);
+    localStorage.getItem("time-block", textArea);
 });
+colorBlock();
 
-// refresh page > saved events persist
- function setBlock() {
-     $(".hour").each(function() {
-         var saveTime = $(this).text();
-         var saveText = localStorage.getItem(saveTime);
-         if (saveText !== null) {
-             $(this).siblings(".description").val(saveText);
-         }
-         
-     });
-     
- }
- 
-console.log(setBlock);
-setBlock();
