@@ -32,12 +32,13 @@ saveBtn.on("click", function() {
     console.log(textArea);
     console.log(hourBlock);
 
-    localStorage.setItem(textArea, hourBlock);
+    localStorage.setItem(hourBlock, textArea);
   
 });
 
 }
 timeIn();
+function getItem () {
 //set localstorage
 $("#9am .description").val(localStorage.getItem("9am"));
 $("#10am .description").val(localStorage.getItem("10am"));
@@ -48,3 +49,4 @@ $("#2pm .description").val(localStorage.getItem("2pm"));
 $("#3pm .description").val(localStorage.getItem("3pm"));
 $("#4pm .description").val(localStorage.getItem("4pm"));
 $("#5pm .description").val(localStorage.getItem("5pm"));
+}
