@@ -5,23 +5,17 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
 // time blocks color coded to indicate whether past, present or future
 function colorBlock() {
     // get hours from current time
-    var setTime = moment().hours();
+    var setTime = moment().hour();
  $(".time-block").each(function () {
     var currentTime = parseInt($(this).attr("id"));
 
     if (currentTime > setTime) {
         $(this).addClass("future");
-        $(this).removeClass("present");
-        $(this).removeClass("past");
     } else if 
         (currentTime === setTime) {
             $(this).addClass("present");
-            $(this).removeClass("past");
-            $(this).removeClass("future");
         } else {
             $(this).addClass("past");
-            $(this).removeClass("present");
-            $(this).removeClass("future");
 
         }
     })
@@ -35,8 +29,21 @@ saveBtn.on("click", function() {
     var textArea = $(this).siblings(".description").val();
     var hourBlock = $(this).siblings(".hour").text();
 
-    localStorage.setItem(textArea, hourBlock);
-    localStorage.getItem("time-block", textArea);
-});
-colorBlock();
+    console.log(textArea);
+    console.log(hourBlock);
 
+    localStorage.setItem(textArea, hourBlock);
+    
+});
+
+
+//set localstorage
+$("#9am .description").val(localStorage.getItem("9am"));
+$("#10am .description").val(localStorage.getItem("10am"));
+$("#11am .description").val(localStorage.getItem("11am"));
+$("#12pm .description").val(localStorage.getItem("12pm"));
+$("#1pm .description").val(localStorage.getItem("1pm"));
+$("#2pm .description").val(localStorage.getItem("2pm"));
+$("#3pm .description").val(localStorage.getItem("3pm"));
+$("#4pm .description").val(localStorage.getItem("4pm"));
+$("#5pm .description").val(localStorage.getItem("5pm"));
