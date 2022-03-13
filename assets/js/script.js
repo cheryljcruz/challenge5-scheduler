@@ -24,7 +24,7 @@ colorBlock();
 // click into time block to enter an event
 // click the save button for that time block > text for event is saved in localstorage
 var saveBtn = $(".saveBtn");
-
+function timeIn() {
 saveBtn.on("click", function() {
     var textArea = $(this).siblings(".description").val();
     var hourBlock = $(this).siblings(".hour").text();
@@ -33,10 +33,11 @@ saveBtn.on("click", function() {
     console.log(hourBlock);
 
     localStorage.setItem(textArea, hourBlock);
-    
+  
 });
 
-
+}
+timeIn();
 //set localstorage
 $("#9am .description").val(localStorage.getItem("9am"));
 $("#10am .description").val(localStorage.getItem("10am"));
