@@ -26,27 +26,26 @@ colorBlock();
 var saveBtn = $(".saveBtn");
 function timeIn() {
 saveBtn.on("click", function() {
-    var textArea = $(this).siblings(".description").val();
     var hourBlock = $(this).siblings(".hour").text();
-
-    console.log(textArea);
+    var textArea = $(this).siblings(".description").val();
+    
     console.log(hourBlock);
-
+    console.log(textArea);
+    
     localStorage.setItem(hourBlock, textArea);
   
 });
 
 }
 timeIn();
-function getItem () {
+
 //set localstorage
-$("#9am .description").val(localStorage.getItem("9am"));
-$("#10am .description").val(localStorage.getItem("10am"));
-$("#11am .description").val(localStorage.getItem("11am"));
-$("#12pm .description").val(localStorage.getItem("12pm"));
-$("#1pm .description").val(localStorage.getItem("1pm"));
-$("#2pm .description").val(localStorage.getItem("2pm"));
-$("#3pm .description").val(localStorage.getItem("3pm"));
-$("#4pm .description").val(localStorage.getItem("4pm"));
-$("#5pm .description").val(localStorage.getItem("5pm"));
-}
+$("#9am").val(localStorage.getItem("9AM"));
+$("#10am").val(localStorage.getItem("10AM"));
+$("#11am").val(localStorage.getItem("11AM"));
+$("#12pm").val(localStorage.getItem("12PM"));
+$("#1pm").val(localStorage.getItem("1PM"));
+$("#2pm").val(localStorage.getItem("2PM"));
+$("#3pm").val(localStorage.getItem("3PM"));
+$("#4pm").val(localStorage.getItem("4PM"));
+$("#5pm").val(localStorage.getItem("5PM"));
